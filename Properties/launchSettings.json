@@ -1,0 +1,42 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    //"iisExpress": {
+    //  "applicationUrl": "https://localhost:40940",
+    //  "sslPort": 44341,
+    //  "https_port": 443
+    //},
+    "iis": {
+      "applicationUrl": "https://weatherdatawebmanager.local:5004",
+      "sslPort": 44342,
+      "https_port": 443
+    }
+  },
+  "profiles": {
+    //"IIS Express": {
+    //  "commandName": "IISExpress",
+    //  "launchBrowser": true,
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Development"
+    //  }
+    //},
+    "IIS": {
+      "commandName": "IIS",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+    //"Umbraco.Web.UI": {
+    //  "commandName": "Project",
+    //  "dotnetRunMessages": true,
+    //  "launchBrowser": true,
+    //  "applicationUrl": "https://localhost:44341;http://localhost:40939",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Development"
+    //  }
+    //}
+  }
+}

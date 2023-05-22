@@ -1,0 +1,50 @@
+﻿@model IndexViewModel
+<!DOCTYPE html>
+<html>
+<body>
+    @foreach (var item in Model.WeatherDataModels)
+    {
+        <div class="weather-info-chunk">
+            <h4>@item.CloudCover</h4>
+            <h4>@item.Pressure</h4>
+            <h4>@item.Humidity</h4>
+            <h4>@item.WindSpeed</h4>
+            <h4>@item.Date.ToShortDateString()</h4>
+            <h4>@item.DewPoint</h4>
+            <h4>@item.HorizontalVisibilityInKilometers</h4>
+            <h4>@item.Humidity</h4>
+            <h4>@item.LowerCloudLimitInMeters</h4>
+            <h4>@item.Pressure</h4>
+            <h4>@item.Temperature</h4>
+            <h4>@item.Time</h4>
+            <h4>@item.WeatherPhenomena</h4>
+            <div>
+                @foreach (string windDirection in item.WindDirections)
+                {
+                    <h4>@windDirection</h4>
+                }
+            </div>
+            <h4>@item.WindSpeed</h4>
+        </div>
+    }
+    @if (Model.PageViewModel.HasPreviousPage)
+    {
+        <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageViewModel.PageNumber - 1)"
+           class="btn btn-outline-dark">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Назад
+        </a>
+    }
+    @if (Model.PageViewModel.HasNextPage)
+    {
+        <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageViewModel.PageNumber + 1)"
+       asp-route-pageSize="@Model.PageViewModel.PageSize"
+           class="btn btn-outline-dark">
+            Вперед
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    }
+</body>
+</html>
